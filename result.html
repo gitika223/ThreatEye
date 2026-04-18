@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scan Results - ThreatEye</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>ThreatEye</h1>
+    <p>Web Application Vulnerability Scanner</p>
+</header>
+
+<div class="results-box">
+    <h2>Scan Results</h2>
+    <h3>Website: {{ url }}</h3>
+    <h4>Security Score: <span class="score">{{ score }} / 100</span></h4>
+
+    <ul>
+        {% for r in results %}
+        <li>{{ r }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/" class="scan-again">Scan Another Website</a>
+</div>
+
+<footer>
+    <p>ThreatEye © 2026 | Cyber Security Project</p>
+</footer>
+
+</body>
+</html>

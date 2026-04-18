@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan History</title>
+</head>
+<body>
+    <h2>Previous Scans</h2>
+    {% for scan in scans %}
+        <div>
+            <h3>{{ scan.url }}</h3>
+            <p>Score: {{ scan.score }}</p>
+            <p>Time: {{ scan.time }}</p>
+            <ul>
+                {% for r in scan.results %}
+                <li>{{ r }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr>
+    {% endfor %}
+</body>
+</html>

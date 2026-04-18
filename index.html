@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ThreatEye - Vulnerability Scanner</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>ThreatEye</h1>
+    <p>Web Application Vulnerability Scanner</p>
+</header>
+
+<div class="scanner-box">
+    <h2>Scan a Website</h2>
+    <form action="/scan" method="POST">
+        <input type="text" name="url" placeholder="Enter Website URL (https://example.com)" required>
+        <button type="submit">Start Scan</button>
+    </form>
+    <a href="/history">
+    <button type="button">View Scan History</button>
+</a>
+
+    <div id="loading" style="display:none;">
+        <p>Scanning website, please wait...</p>
+        <div class="spinner"></div>
+    </div>
+</div>
+
+<section class="features">
+    <div class="card">
+        <h3>SQL Injection</h3>
+        <p>Detect database injection vulnerabilities in web applications.</p>
+    </div>
+    <div class="card">
+        <h3>XSS Detection</h3>
+        <p>Identify cross-site scripting attacks that threaten users.</p>
+    </div>
+    <div class="card">
+        <h3>Security Headers</h3>
+        <p>Check missing or weak security headers of a website.</p>
+    </div>
+</section>
+
+<footer>
+    <p>ThreatEye © 2026 | Cyber Security Project</p>
+</footer>
+
+<script>
+const form = document.querySelector('form');
+const loading = document.getElementById('loading');
+
+form.addEventListener('submit', () => {
+    loading.style.display = 'block';
+});
+</script>
+
+</body>
+</html>
